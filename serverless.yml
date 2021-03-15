@@ -1,0 +1,20 @@
+service: sls-ts
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+custom:
+  webpack:
+    packager: yarn
+
+provider:
+  name: aws
+  region: eu-north-1
+  runtime: nodejs14.x
+
+functions:
+  myFunction:
+    handler: src/myFunction.handler
